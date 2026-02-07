@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<section>
+  <header class="main">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <p class="subtitle">{{ . | markdownify | safeHTML }}</p>
+    {{ end }}
+  </header>
+
+  <div class="posts">
+    {{ range .Pages.ByDate.Reverse }}
+      {{ $p := . }}
+      <article>
+        {{ with $p.Params.image }}
+          <a href="{{ $p.RelPermalink }}" class="image"><img src="{{ . | safeURL }}" alt="{{ $p.Title }}" /></a>
+        {{ end }}
+
+        <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+
+        {{ with $p.Params.summary }}
+          <p>{{ . | markdownify | safeHTML }}</p>
+        {{ else }}
+          <p>{{ $p.Summary }}</p>
+        {{ end }}
+
+        <ul class="actions">
+          <li><a href="{{ $p.RelPermalink }}" class="button">More</a></li>
+        </ul>
+      </article>
+    {{ end }}
+  </div>
+
+</section>
+
+{{ end }}

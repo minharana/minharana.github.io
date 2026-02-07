@@ -1,0 +1,11 @@
+<!-- Header -->
+<header id="header">
+    <a href="{{ .Site.Data.header.mainLink }}" class="logo">{{ .Site.Data.header.titleHtml | safeHTML }}</a>
+    <ul class="icons">
+        {{ with .Site.Data.header.social }}
+            {{ range . }}
+                <li><a href="{{ .link }}" class="icon brands fa-{{ .icon }}"><span class="label">{{ .name }}</span></a></li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</header>

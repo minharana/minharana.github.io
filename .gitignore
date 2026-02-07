@@ -1,0 +1,40 @@
+# Hugo
+/public/
+/resources/_gen/
+/hugo_stats.json
+.hugo_build.lock
+/.cache/
+/resources/
+
+# Node/npm
+/node_modules/
+/assets/node_modules/
+/dist/
+
+# Theme build outputs
+/themes/**/node_modules/
+/themes/**/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.iml
+
+# Env & logs
+.env
+.env.*
+*.log
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+
+# Terraform/Python virtualenvs
+.terraform/
+.venv/
+venv/

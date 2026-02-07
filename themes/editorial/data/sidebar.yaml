@@ -1,0 +1,66 @@
+menu:
+  title: "Menu"
+  items:
+    - label: "Homepage"
+      url: "index.html"
+    - label: "Generic"
+      url: "generic.html"
+    - label: "Elements"
+      url: "elements.html"
+    - label: "Submenu"
+      children:
+        - label: "Lorem Dolor"
+          url: "#"
+        - label: "Ipsum Adipiscing"
+          url: "#"
+        - label: "Tempus Magna"
+          url: "#"
+        - label: "Feugiat Veroeros"
+          url: "#"
+    - label: "Etiam Dolore"
+      url: "#"
+    - label: "Adipiscing"
+      url: "#"
+    - label: "Another Submenu"
+      children:
+        - label: "Lorem Dolor"
+          url: "#"
+        - label: "Ipsum Adipiscing"
+          url: "#"
+        - label: "Tempus Magna"
+          url: "#"
+        - label: "Feugiat Veroeros"
+          url: "#"
+    - label: "Maximus Erat"
+      url: "#"
+    - label: "Sapien Mauris"
+      url: "#"
+    - label: "Amet Lacinia"
+      url: "#"
+
+section1:
+  title: "Ante interdum"
+  mini_posts:
+    - url: "#"
+      image: "images/pic07.jpg"
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam."
+    - url: "#"
+      image: "images/pic08.jpg"
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam."
+    - url: "#"
+      image: "images/pic09.jpg"
+      text: "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam."
+
+section2:
+  title: "Get in touch"
+  text: "Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam."
+  contact:
+    - icon: "fa-envelope"
+      value: '<a href="#">information@untitled.tld</a>'
+    - icon: "fa-phone"
+      value: "(000) 000-0000"
+    - icon: "fa-home"
+      value: "1234 Somewhere Road #8254<br />\nNashville, TN 00000-0000"
+
+footer:
+  text: '&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.'

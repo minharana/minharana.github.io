@@ -1,0 +1,68 @@
+<!-- Sidebar -->
+<div id="sidebar">
+    <div class="inner">
+        {{ with .Site.Data.sidebar }}
+
+        <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>{{ .menu.title }}</h2>
+                </header>
+                <ul>
+                {{ range .menu.items }}
+                    {{ if .children }}
+                    <li>
+                        <span class="opener">{{ .label }}</span>
+                        <ul>
+                        {{ range .children }}
+                            <li><a href="{{ .url }}">{{ .label }}</a></li>
+                        {{ end }}
+                        </ul>
+                    </li>
+                    {{ else }}
+                    <li><a href="{{ .url }}">{{ .label }}</a></li>
+                    {{ end }}
+                {{ end }}
+                </ul>
+            </nav>
+
+        <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>{{ .section1.title }}</h2>
+                </header>
+                <div class="mini-posts">
+                    {{ range .section1.mini_posts }}
+                    <article>
+                        <a href="{{ .url }}" class="image"><img src="{{ .image }}" alt="" /></a>
+                        <p>{{ .text }}</p>
+                    </article>
+                    {{ end }}
+                </div>
+                <ul class="actions">
+                    <li><a href="#" class="button">More</a></li>
+                </ul>
+            </section>
+
+        <!-- Section -->
+            <section>
+                <header class="major">
+                    <h2>{{ .section2.title }}</h2>
+                </header>
+                <p>{{ .section2.text }}</p>
+                <ul class="contact">
+                    {{ range .section2.contact }}
+                    <li class="icon solid {{ .icon }}">{{ .value | safeHTML }}</li>
+                    {{ end }}
+                </ul>
+            </section>
+
+        <!-- Footer -->
+            <footer id="footer">
+                <p class="copyright">{{ .footer.text | safeHTML }}</p>
+            </footer>
+
+        {{ end }}
+
+    </div>
+</div>

@@ -1,0 +1,55 @@
+{{ define "main" }}
+  <!-- Banner -->
+  <section id="banner">
+    <div class="content">
+      <header>
+        <h1>{{ with .Site.Data.home.banner.heading }}{{ . | safeHTML }}{{ end }}</h1>
+        <p>{{ .Site.Data.home.banner.subheading }}</p>
+      </header>
+      <p>{{ .Site.Data.home.banner.description }}</p>
+      <ul class="actions">
+        <li><a href="#" class="button big">Learn More</a></li>
+      </ul>
+    </div>
+    <span class="image object">
+      <img src="{{ .Site.Data.home.banner.image }}" alt="" />
+    </span>
+  </section>
+
+<!-- Section -->
+  <section>
+    <header class="major">
+      <h2>{{ .Site.Data.home.skills.sectionTitle }}</h2>
+    </header>
+    <div class="features">
+      {{ range .Site.Data.home.skills.items }}
+      <article>
+        <span class="icon {{ .icon }}"></span>
+        <div class="content">
+          <h3>{{ .headline }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+<!-- Section -->
+  <section>
+    <header class="major">
+      <h2>{{ .Site.Data.home.highlights.sectionTitle }}</h2>
+    </header>
+    <div class="posts">
+      {{ range .Site.Data.home.highlights.items }}
+      <article>
+        <a href="{{ .link }}" class="image"><img src="{{ .image }}" alt="" /></a>
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+        <ul class="actions">
+          <li><a href="{{ .link }}" class="button">More</a></li>
+        </ul>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

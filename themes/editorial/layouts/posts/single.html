@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+
+  <!-- Content -->
+  <section>
+    <header class="main">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}
+      <p class="subtitle">{{ . | markdownify | safeHTML }}</p>
+      {{ end }}
+    </header>
+
+    {{ with .Params.image }}
+    <span class="image main"><img src="{{ . | safeURL }}" alt="{{ $.Title }}" /></span>
+    {{ end }}
+
+    {{ with .Params.summary }}
+    <p class="summary">{{ . | markdownify | safeHTML }}</p>
+    {{ end }}
+
+    {{ if .Params.tags }}
+    <p class="tags">
+      {{ range $i, $tag := .Params.tags }}
+        {{ if $i }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>
+      {{ end }}
+    </p>
+    {{ end }}
+
+    {{ .Content }}
+
+  </section>
+{{ end }}
